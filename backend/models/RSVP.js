@@ -8,6 +8,6 @@ const rsvpSchema = new mongoose.Schema({
   numOfChildren: { type: Number, required: true },
 });
 
-const RSVP = mongoose.model("RSVP", rsvpSchema);
+const Rsvp = mongoose.model("RSVP", rsvpSchema);
 
-export default RSVP;
+export default Rsvp;
