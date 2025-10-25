@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/rsvp", rsvpRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
