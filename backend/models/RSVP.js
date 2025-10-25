@@ -1,10 +1,12 @@
 import mongoose from "mongoose";
+import crypto from "crypto";
 
 const rsvpSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: {
     type: String,
     required: true,
+    unique: true,
     lowercase: true,
     match: [
       /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/,
@@ -25,6 +27,13 @@ const rsvpSchema = new mongoose.Schema({
       return this.attending === true;
     },
     min: [0, "Number of children cannot be negative"],
+  },
+  updateToken: {
+    type: String,
+    required: true,
+    default: function () {
+      return crypto.randomUUID();
+    },
   },
 });
 
