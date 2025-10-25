@@ -1,6 +1,5 @@
 import express from "express";
-import Rsvp from "./models/Rsvp.js";
-import e from "express";
+import Rsvp from "../models/Rsvp.js";
 
 const router = express.Router();
 
